@@ -18,9 +18,8 @@ const SearchBar = () => {
       <Avatar
         size={37}
         containerStyle={styles.button}
-        overlayContainerStyle={{backgroundColor: "red", borderRadius: 50}}
+        overlayContainerStyle={{backgroundColor: "#FF3A44", borderRadius: 50}}
         icon={{ name: "bell-outline", color: "white", size:24, type: "material-community" }}
-        onPress={() => console.log("Works!")}
         activeOpacity={0.7}
       />
 
@@ -33,6 +32,7 @@ export default SearchBar;
 const styles = StyleSheet.create({
   container: {
     padding: 10,
+    paddingBottom: 0,
     flexDirection: "row",
   },
   input: {

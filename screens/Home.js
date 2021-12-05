@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import LatestNews from "../components/LatestNews";
 import SearchBar from "../components/SearchBar";
 
 const Home = () => {
@@ -8,11 +9,10 @@ const Home = () => {
     <SafeAreaView>
       <View style={styles.container}>
         <SearchBar />
-        {/* Notification ? */}
+        <LatestNews />
         {/* Latest News */}
         {/* Categories */}
         {/* Other news */}
-        <Text>Home</Text>
       </View>
     </SafeAreaView>
   );
