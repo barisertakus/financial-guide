@@ -4,7 +4,13 @@ import { StyleSheet, Text, View } from 'react-native'
 const Screen1 = () => {
   return (
     <View>
+      {/* SearchBar */}
+      {/* Notification ? */}
+      {/* Latest News */}
+      {/* Categories */}
+      {/* Other news */}
       <Text>Screen1</Text>
+
     </View>
   )
 }
