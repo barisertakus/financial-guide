@@ -3,12 +3,12 @@ import { StyleSheet, Text, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import BottomNavigation from '../BottomNavigation'
 
-const Home = () => {
+const HomeNav = () => {
   return (
     <BottomNavigation />
   )
 }
 
-export default Home
+export default HomeNav
 
 const styles = StyleSheet.create({})
