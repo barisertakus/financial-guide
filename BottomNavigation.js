@@ -1,7 +1,7 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import Screen1 from './screens/Screen1';
+import Home from './screens/Home';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Screen2 from './screens/Screen2';
 
@@ -13,11 +13,12 @@ const BottomNavigation = () => {
       initialRouteName="Feed"
       screenOptions={{
         tabBarActiveTintColor: '#e91e63',
+        headerShown: false
       }}
     >
       <Tab.Screen
-        name="Feed"
-        component={Screen1}
+        name="home"
+        component={Home}
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: ({ color, size }) => (
@@ -38,7 +39,7 @@ const BottomNavigation = () => {
       />
       <Tab.Screen
         name="Profile"
-        component={Screen1}
+        component={Home}
         options={{
           tabBarLabel: 'Profile',
           tabBarIcon: ({ color, size }) => (
