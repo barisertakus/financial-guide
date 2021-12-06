@@ -25,7 +25,11 @@ const LatestNews = () => {
         </TouchableOpacity>
       </View>
 
-      <ScrollView style={styles.news} horizontal showsHorizontalScrollIndicator={false}>
+      <ScrollView
+        style={styles.news}
+        horizontal
+        showsHorizontalScrollIndicator={false}
+      >
         <LatestCard />
         <LatestCard />
       </ScrollView>
@@ -36,7 +40,7 @@ const LatestNews = () => {
 export default LatestNews;
 
 const styles = StyleSheet.create({
-  container:{
+  container: {
     paddingHorizontal: 20,
   },
   header: {
@@ -56,8 +60,11 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
   },
-  icon: { marginLeft: 15 },
-  news: {marginTop: 10},
+  icon: {
+    marginLeft: 15,
+  },
+  news: {
+    marginTop: 10,
+  },
   cards: {},
-
 });
