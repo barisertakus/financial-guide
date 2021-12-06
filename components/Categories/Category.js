@@ -23,6 +23,7 @@ const styles = (activeTab, name) =>
     container: {
       backgroundColor: activeTab !== name ? "white" : "#FF3A44",
       padding: 10,
+      paddingHorizontal: 15,
       marginRight: 10,
       borderRadius: 20,
     },
