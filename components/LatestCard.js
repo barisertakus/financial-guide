@@ -1,23 +1,23 @@
 import React from "react";
 import { ImageBackground, StyleSheet, Text, View } from "react-native";
 
-const LatestCard = () => {
+const LatestCard = ({image, title, site, excerpt}) => {
+  
   return (
     <ImageBackground 
-      source={require("../assets/images/news1.png")}
+      source={{uri: image}}
       style={styles.cardImageContainer}
       imageStyle={styles.cardImage}
     >
       <View style={styles.imageCenterTextContainer}>
         <Text style={styles.imageCenterText}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus
-          porta sodales.
+          {!site?.includes("aksam") ? title : null}
         </Text>
       </View>
       <View style={styles.imageBottomTextContainer}>
         <Text style={styles.imageBottomText}>
-          Bottom Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus
-          porta sodales.
+          {!site?.includes("aksam") ? title : null}
+          {excerpt.length > 75 ? excerpt.substring(0,75) + "..." : excerpt}
         </Text>
       </View>
 
