@@ -16,7 +16,7 @@ const Home = () => {
         <SearchBar />
         <LatestNews />
         <Categories activeTab={activeTab} setActiveTab={setActiveTab} />
-        <BottomNews />
+        <BottomNews activeTab={activeTab} />
         {/* Bottom Nav */}
       </View>
     </SafeAreaView>
