@@ -5,4 +5,4 @@ const instance = axios.create({
   baseURL: localURL
 })
 
-export const instance;
+export default instance;
