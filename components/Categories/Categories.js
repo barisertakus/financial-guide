@@ -2,16 +2,37 @@ import React from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import Category from "./Category";
 
-const Categories = ({activeTab, setActiveTab}) => {
+const categories = [
+  "News",
+  "Sport",
+  "Tech",
+  "World",
+  "Finance",
+  "Politics",
+  "Business",
+  "Economics",
+  "Entertainment",
+  "Beauty",
+  "Travel",
+  "Music",
+  "Food",
+  "Science",
+  "Gaming",
+  "Energy",
+];
+
+const Categories = ({ activeTab, setActiveTab }) => {
   return (
     <View style={styles.container}>
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-        <Category activeTab={activeTab} setActiveTab={setActiveTab} name="Healthy" />
-        <Category activeTab={activeTab} setActiveTab={setActiveTab} name="Technology" />
-        <Category activeTab={activeTab} setActiveTab={setActiveTab} name="Finance" />
-        <Category activeTab={activeTab} setActiveTab={setActiveTab} name="Arts" />
-        <Category activeTab={activeTab} setActiveTab={setActiveTab} name="Sport" />
-        <Category activeTab={activeTab} setActiveTab={setActiveTab} name="Entertainment" />
+        {categories.map((category, id) => (
+          <Category
+            key={id}
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+            name={category}
+          />
+        ))}
       </ScrollView>
     </View>
   );
