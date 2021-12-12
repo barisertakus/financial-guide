@@ -1,22 +1,21 @@
 import React from 'react'
 import { ImageBackground, StyleSheet, Text, View } from 'react-native'
 
-const CategoryNews = ({imageName}) => {
+const CategoryNews = ({image, title, author}) => {
   return (
     <ImageBackground
-      source={imageName}
+      source={{uri: image}}
       style={styles.cardImageContainer}
       imageStyle={styles.cardImage}
     >
       <View style={styles.imageTopTextContainer}>
         <Text style={styles.imageTopText}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus
-          porta sodales.
+          {title}
         </Text>
       </View>
       <View style={styles.imageBottomTextContainer}>
         <Text style={styles.imageBottomText}>
-          Matt Vilano
+          {author}
         </Text>
         <Text style={styles.imageBottomText}>
           Sunday 9 May 2021
