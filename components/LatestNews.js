@@ -1,4 +1,5 @@
-import React from "react";
+import axios from "../helpers/axios";
+import React, { useEffect, useState } from "react";
 import {
   ScrollView,
   StyleSheet,
@@ -10,6 +11,15 @@ import Icon from "react-native-vector-icons/MaterialIcons";
 import LatestCard from "./LatestCard";
 
 const LatestNews = () => {
+  const [articles, setArticles] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("api/article/getLatest")
+      .then((response) => setArticles(response.data))
+      .catch((error) => console.log(error));
+  }, []);
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -30,8 +40,9 @@ const LatestNews = () => {
         horizontal
         showsHorizontalScrollIndicator={false}
       >
-        <LatestCard />
-        <LatestCard />
+        {articles.map((article) => (
+          <LatestCard key={article.id} title={article.title} image={article.media} site={article.rights} excerpt={article.excerpt} />
+        ))}
       </ScrollView>
     </View>
   );
