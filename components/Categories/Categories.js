@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import Category from "./Category";
 
-const Categories = () => {
-  const [activeTab, setActiveTab] = useState("");
-
+const Categories = ({activeTab, setActiveTab}) => {
   return (
     <View style={styles.container}>
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>

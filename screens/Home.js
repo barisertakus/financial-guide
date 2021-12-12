@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import BottomNews from "../components/BottomNews";
@@ -7,12 +7,15 @@ import LatestNews from "../components/LatestNews";
 import SearchBar from "../components/SearchBar";
 
 const Home = () => {
+
+  const [activeTab, setActiveTab] = useState("");
+
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
         <SearchBar />
         <LatestNews />
-        <Categories />
+        <Categories activeTab={activeTab} setActiveTab={setActiveTab} />
         <BottomNews />
         {/* Bottom Nav */}
       </View>
