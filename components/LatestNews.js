@@ -10,16 +10,8 @@ import {
 import Icon from "react-native-vector-icons/MaterialIcons";
 import LatestCard from "./LatestCard";
 
-const LatestNews = () => {
-  const [articles, setArticles] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("api/article/getLatest")
-      .then((response) => setArticles(response.data))
-      .catch((error) => console.log(error));
-  }, []);
-
+const LatestNews = ({articles}) => {
+ 
   return (
     <View style={styles.container}>
       <View style={styles.header}>
