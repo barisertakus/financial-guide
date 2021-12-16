@@ -1,17 +1,21 @@
-import React from "react";
+import axios from "../helpers/axios";
+import React, { useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { Avatar, Input } from "react-native-elements";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
-const SearchBar = () => {
+const SearchBar = ({search, setSearch, handleClick}) => {
+
   return (
     <View style={styles.container}>
       <View style={styles.input}>
         <Input
           inputContainerStyle={styles.inputContainer}
           inputStyle={styles.inputStyle}
+          onChangeText={setSearch}
+          value={search}
           placeholder="Search news..."
-          rightIcon={<Icon name="magnify" size={24} style={styles.icon} />}
+          rightIcon={<Icon name="magnify" size={24} style={styles.icon} onPress={handleClick ? handleClick : undefined} />}
           rightIconContainerStyle={styles.inputRightIconContainer}
         />
       </View>

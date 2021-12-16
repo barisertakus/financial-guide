@@ -3,7 +3,7 @@ import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import Home from './screens/Home';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import Screen2 from './screens/Screen2';
+import AllNews from './screens/AllNews';
 
 const Tab = createBottomTabNavigator();
 
@@ -27,21 +27,10 @@ const BottomNavigation = () => {
         }}
       />
       <Tab.Screen
-        name="Notifications"
-        component={Screen2}
+        name="AllNews"
+        component={AllNews}
         options={{
-          tabBarLabel: 'Updates',
-          tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="bell" color={color} size={size} />
-          ),
-          tabBarBadge: 3,
-        }}
-      />
-      <Tab.Screen
-        name="Profile"
-        component={Home}
-        options={{
-          tabBarLabel: 'Profile',
+          tabBarLabel: 'All News',
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="account" color={color} size={size} />
           ),
