@@ -12,11 +12,12 @@ import LatestCard from "./LatestCard";
 
 const LatestNews = ({ articles, navigation }) => {
   const navigateToDetails = (article) => {
+    console.log(article.excerpt)
     navigation.navigate("details", {
-      title: article.title,
+      title: article.excerpt,
       imageUrl: article.media,
       author: article.author,
-      content: article.excerpt,
+      content: article.summary,
     });
   };
 
@@ -24,7 +25,7 @@ const LatestNews = ({ articles, navigation }) => {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headerText}>Latest News</Text>
-        <TouchableOpacity style={styles.allButton}>
+        <TouchableOpacity style={styles.allButton} onPress={()=>navigation.navigate("AllNews")}>
           <Text style={styles.regularText}>See All</Text>
           <Icon
             name="arrow-forward"

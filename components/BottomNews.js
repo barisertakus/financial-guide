@@ -14,10 +14,10 @@ const BottomNews = ({ activeTab, navigation }) => {
 
   const navigateToDetails = (article) => {
     navigation.navigate("details", {
-      title: article.title,
+      title: article.excerpt,
       imageUrl: article.media,
       author: article.author,
-      content: article.excerpt,
+      content: article.summary,
     })
   }
 

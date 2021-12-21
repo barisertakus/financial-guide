@@ -4,7 +4,7 @@ import { FlatList, SafeAreaView, StyleSheet, Text, View } from "react-native";
 import SearchBar from "../components/SearchBar";
 import BottomNews from "../components/BottomNews";
 
-const AllNews = () => {
+const AllNews = ({navigation}) => {
   const [search, setSearch] = useState("");
   const [articles, setArticles] = useState([]);
 
@@ -30,7 +30,7 @@ const AllNews = () => {
         <Text style={styles.text}>All News</Text>
         <FlatList
           data={articles}
-          renderItem={() => <BottomNews />}
+          renderItem={() => <BottomNews navigation={navigation} />}
           pagingEnabled
         />
       </View>
