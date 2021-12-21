@@ -10,8 +10,16 @@ import {
 import Icon from "react-native-vector-icons/MaterialIcons";
 import LatestCard from "./LatestCard";
 
-const LatestNews = ({articles}) => {
- 
+const LatestNews = ({ articles, navigation }) => {
+  const navigateToDetails = (article) => {
+    navigation.navigate("details", {
+      title: article.title,
+      imageUrl: article.media,
+      author: article.author,
+      content: article.excerpt,
+    });
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -33,7 +41,18 @@ const LatestNews = ({articles}) => {
         showsHorizontalScrollIndicator={false}
       >
         {articles.map((article) => (
-          <LatestCard key={article.id} title={article.title} image={article.media} site={article.rights} excerpt={article.excerpt} />
+          <TouchableOpacity
+            key={article.id}
+            onPress={() => navigateToDetails(article)}
+            activeOpacity={0.4}
+          >
+            <LatestCard
+              title={article.title}
+              image={article.media}
+              site={article.rights}
+              excerpt={article.excerpt}
+            />
+          </TouchableOpacity>
         ))}
       </ScrollView>
     </View>

@@ -29,9 +29,9 @@ const Home = ({navigation}) => {
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
         <SearchBar search={search} setSearch={setSearch} handleClick={getSearchResults}  />
-        <LatestNews articles={articles} />
+        <LatestNews articles={articles} navigation={navigation} />
         <Categories activeTab={activeTab} setActiveTab={setActiveTab} />
-        <BottomNews activeTab={activeTab} />
+        <BottomNews activeTab={activeTab} navigation={navigation} />
         {/* Bottom Nav */}
       </View>
     </SafeAreaView>

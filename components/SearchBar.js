@@ -6,6 +6,10 @@ import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 const SearchBar = ({search, setSearch, handleClick}) => {
 
+  const onPress = () => {
+    return handleClick ? handleClick : undefined
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.input}>
@@ -15,8 +19,9 @@ const SearchBar = ({search, setSearch, handleClick}) => {
           onChangeText={setSearch}
           value={search}
           placeholder="Search news..."
-          rightIcon={<Icon name="magnify" size={24} style={styles.icon} onPress={handleClick ? handleClick : undefined} />}
+          rightIcon={<Icon name="magnify" size={24} style={styles.icon} onPress={handleClick} />}
           rightIconContainerStyle={styles.inputRightIconContainer}
+          onSubmitEditing={handleClick}
         />
       </View>
       <Avatar
