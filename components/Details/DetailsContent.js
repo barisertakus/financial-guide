@@ -30,7 +30,7 @@ export default DetailsContent;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 0.5,
   },
   content: {
     flex: 1,

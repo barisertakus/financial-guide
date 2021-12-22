@@ -21,16 +21,15 @@ const DetailsHeader = ({ imageUrl }) => {
           <TouchableOpacity
             style={styles.back}
             onPress={() => navigation.goBack()}
-            j
           >
             <Icon name="arrow-back-ios" size={24} style={styles.icon} />
           </TouchableOpacity>
         </View>
       </SafeAreaView>
-      <View style={{ marginTop: -50 }}>
+      <View style={{justifyContent: "center", alignItems: "center"}}>
         <Image
           source={{ uri: imageUrl }}
-          style={{ width: dimension.width, height: dimension.height / 2 }}
+          style={{ width: dimension.width, height: dimension.height / 3 }}
           resizeMode="contain"
         />
       </View>
@@ -41,7 +40,10 @@ const DetailsHeader = ({ imageUrl }) => {
 export default DetailsHeader;
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    flex: 0.5,
+    justifyContent: "flex-start"
+  },
   back: {
     borderRadius: 10,
     padding: 5,
