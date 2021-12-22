@@ -1,8 +1,9 @@
 import axios from "../helpers/axios";
 import React, { useEffect, useState } from "react";
-import { FlatList, SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { FlatList, StyleSheet, Text, View } from "react-native";
 import SearchBar from "../components/SearchBar";
 import BottomNews from "../components/BottomNews";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const AllNews = ({navigation}) => {
   const [search, setSearch] = useState("");
@@ -16,7 +17,9 @@ const AllNews = ({navigation}) => {
   };
 
   useEffect(()=>{
-    getSearchResults();
+    const unsubscribe = getSearchResults();
+
+    return unsubscribe;
   },[])
 
   return (
