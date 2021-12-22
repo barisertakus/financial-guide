@@ -12,7 +12,6 @@ import LatestCard from "./LatestCard";
 
 const LatestNews = ({ articles, navigation }) => {
   const navigateToDetails = (article) => {
-    console.log(article.excerpt)
     navigation.navigate("details", {
       title: article.excerpt,
       imageUrl: article.media,
